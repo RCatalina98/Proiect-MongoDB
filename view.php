@@ -1,6 +1,6 @@
     <?php
 include'Connection.php';
-require_once 'connection.php';
+require_once 'Connection.php';
 $id = new \MongoDB\BSON\ObjectId($_GET['id']);
 $filter = ['_id' => $id];
 $query = new MongoDB\Driver\Query($filter);          
