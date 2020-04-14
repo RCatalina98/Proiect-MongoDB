@@ -12,8 +12,7 @@
 <body>
   
     
-         
-         <?php
+ <?php
        //include connection file
         require_once 'Connection.php';
         $bulk = new MongoDB\Driver\BulkWrite;
@@ -51,13 +50,13 @@ $update=['$set'=>$data];
           header('Location:sale.php');
             
         }   
- ?>
+ ?>        
 <h1>Edit:</h1>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data">
-    Title:<br/><input type="text" name="title" value="<?php echo $record['title'] ;?>"/><br/>
-    Image: <br/><input type="file" name="image" value="<?php echo $record['images'] ;?>"><br/>
-    <img src="<?php echo $record['images'] ;?>"><br/>
-    <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"/>
+    Title:<br/><input type="text" name="title" value="<?php echo $doc->title ;?>"/><br/>
+    Image: <br/><input type="file" name="image" value="<?php echo $doc->image ;?>"><br/>
+    <img src="<?php echo $doc->image ;?>"><br/>
+    <input type="hidden" name="id" value="<?php echo $doc->_id; ?>"/>
     <input type="submit" name="submit" value="Edit"/>
 </form>
 </body>

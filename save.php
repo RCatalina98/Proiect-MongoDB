@@ -14,9 +14,9 @@ if(isset($_POST['upload'])){
 
     mysqli_query($con,$sql);
     if(move_uploaded_file($_FILES['image']['tmp_name'],$target)){
-        header('location:welcome.php');
+        header('location:sale.php');
         
     }else{
-        $msg="!!!!";
+        $msg="!!!";
     }
 ?>

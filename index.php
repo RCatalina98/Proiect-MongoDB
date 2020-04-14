@@ -321,9 +321,7 @@ function carousel() {
 }
 </script>
 </section>
-               <?php
-                echo phpinfo();
-                ?>
+              
 			<!-- Features -->
 				<section id="features">
 					<div class="container">

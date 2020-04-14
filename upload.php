@@ -11,7 +11,8 @@
 
 <body>      
 <center>
-<div id="content"><form method="post" action="save.php" enctype="multipart/form-data">
+
+ <div id="content"><form method="post" action="save.php" enctype="multipart/form-data">
                         <input type="hidden" name="size" value="10000000">
                         <div>
                             <input type="file" name="image">
@@ -20,7 +21,7 @@
                             <textarea name="text" cols="40" rows="4" placeholder="name of image"></textarea>
                         </div>
                         <div>
-                            <input class="btn btn-default btn-lg" type="submit" name="upload" value="Upload Image">
+                            <input type="submit" name="upload" value="Upload Image">
                             
                         </div>
             </form></div>

@@ -165,14 +165,13 @@ div.desc {
 //session_start();
 echo "<a href='admin.php'>logout</a>";
 ?>
-    <!--inserare imagini sql-->
-       
-     <?php
-       require_once 'Connection.php';
+   <!--inserare imagini sql-->
+       <?php
+       include 'Connection.php';
         $query = new MongoDB\Driver\Query([]); 
         $rows = $client->executeQuery("images.images", $query);
-       ?>
-       <table width="10" cellpadding="2" cellspace="2" rules="rows">
+      ?>
+       <table width="30%" cellpadding="4" cellspace="4" rules="rows">
            <tr>
                <th>Nume</th>
                <th>Imagine</th>
@@ -184,18 +183,15 @@ echo "<a href='admin.php'>logout</a>";
          <td><?php echo $val->title;?></td>
          <td><img src="<?php echo $val->image;?>"></td>
          <td>
-                   <?php echo "<a href=\"view.php?id=".$val->_id."\">View</a>"?>
-                <?php echo "<a href=\"edit.php?id=".$val->_id."\">Edit</a>"?>
-                <?php echo "<a href=\"delete.php?id=".$val->_id."\">Delete</a>"?>
+                   <?php echo "<a href=\"edit.php?id=".$val->_id."\">Edit</a><a href=\"delete.php?id=".$val->_id."\" onclick=\"return confirm('Are you sure?')\">Delete</a>"?>
                </td>
-<?php endif;?>
-        <?php endforeach;?>
-       < </table>
-</center>
+           </tr>
+           <?php endif;?>
+         <?php endforeach;?>
+       </table>
        <br><br>
        <a href="upload.php">Upload another image</a>
-       <!--end of upload images-->      
-
+       <!--end of upload images-->   
 </body>
 
 
