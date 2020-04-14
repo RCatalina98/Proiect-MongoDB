@@ -190,8 +190,10 @@ echo "<a href='admin.php'>logout</a>";
                </td>
 <?php endif;?>
         <?php endforeach;?>
-       </table>
+       < </table>
+</center>
        <br><br>
+       <a href="upload.php">Upload another image</a>
        <!--end of upload images-->      
 
 </body>
