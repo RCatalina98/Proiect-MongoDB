@@ -12,11 +12,10 @@
 <body>
   
     
- <?php
-       //include connection file
+ <?php       
+//include connection file
         require_once 'Connection.php';
         $bulk = new MongoDB\Driver\BulkWrite;
-        
         if(!isset($_POST["submit"])){
             $id = new \MongoDB\BSON\ObjectId($_GET['id']);
             $filter = ['_id' => $id];
@@ -35,9 +34,8 @@ $docs = current($articles->toArray());
            $target=$docs->image;
            echo $target;
            }  
-                
  $data=[
-        'title'=>$_POST['title'],
+        'title'=>$_POST['nume'],
         'image'=>$target
     ];
  $id = new \MongoDB\BSON\ObjectId($_POST['id']);
@@ -45,7 +43,6 @@ $filter = ['_id' => $id];
 $update=['$set'=>$data];
  $bulk->update($filter, $update);
  $client->executeBulkWrite('images.images',$bulk);           
-            
    move_uploaded_file($_FILES['image']['tmp_name'],$target);
           header('Location:sale.php');
             
