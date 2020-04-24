@@ -181,7 +181,7 @@ echo "<a href='admin.php'>logout</a>";
 <?php if((isset($val->title))&&(isset($val->image))&&($val->title!="")&&($val->image!="")):?>  
        
          <td><?php echo $val->title;?></td>
-         <td><img src="<?php echo $val->image;?>"></td>
+         <td><img src="<?php echo $val->image;?>" height="300" width="300"></td>
          <td>
                    <?php echo "<a href=\"edit.php?id=".$val->_id."\">Edit</a><a href=\"delete.php?id=".$val->_id."\" onclick=\"return confirm('Are you sure?')\">Delete</a>"?>
                </td>
